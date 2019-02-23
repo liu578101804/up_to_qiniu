@@ -38,7 +38,7 @@ make build_docker
 
 ## 镜像使用方法
 
-程序的允许需要依赖一个配置文件(config.json)，这个配置文件，主要是配置七牛云的相关参数以及程序监听的端口，这里给一个例子：
+程序的运行需要依赖一个配置文件(config.json)，这个配置文件，主要是配置七牛云的相关参数以及程序监听的端口，这里给一个例子：
 
 ```json
 {
@@ -48,8 +48,8 @@ make build_docker
   "qiniu":{
     "AccessKey": "",      /*从七牛云后台能拿到*/
     "SecretKey": "",      /*从七牛云后台能拿到*/
-    "Bucket": "",         /*区块名字*/
-    "PipeLine": "",       /*七牛的多媒体作业*/
+    "Bucket": "",         /*存储空间名字*/
+    "PipeLine": "",       /*七牛的多媒体作业队列*/
     "Domain": "",         /*域名*/
     "MaxSize": 4          /*上传图片最大允许大小，单位M*/
   }
@@ -61,6 +61,8 @@ make build_docker
 把这个配置文件挂在到 `/app/config/config.json` 下面就能正常启动了。
 
 ## docker-compose的使用 
+
+我这里是直接把`config`目录挂在到了本地，便于后期扩展。
 
 ```yaml
 
