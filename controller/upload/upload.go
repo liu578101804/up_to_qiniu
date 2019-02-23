@@ -46,6 +46,10 @@ func Upload(c *ace.C)  {
 	fileBytes, err := ioutil.ReadAll(file)
 	//上传文件
 	res, err := model.UpResumeData(fileName, fileBytes)
+	if err != nil {
+		SendErrorJSON(err.Error(), c)
+		return
+	}
 
 	c.JSON(200, map[string]interface{}{
 		"code": 200,

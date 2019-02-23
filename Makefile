@@ -3,6 +3,10 @@ GOBUILD=$(GOCMD) build
 GOGET=$(GOCMD) get
 DOCKER_IMAGE_NAME=liu578101804/up_to_qiniu:1.0
 
+.PHONY: dev
+dev:
+	go run main.go
+
 .PHONY: build_linux
 build_linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o ./build/app_linux -v
