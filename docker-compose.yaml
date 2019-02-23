@@ -1,0 +1,19 @@
+
+version: '2'
+
+services:
+
+  upQiniu:
+    container_name: up_qiniu
+    image: liu578101804/up_to_qiniu:1.0
+    ports:
+      - "8023:8023"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config:/app/config
+
+
+
+
+
