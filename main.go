@@ -20,6 +20,5 @@ func main() {
 
 	fmt.Println("server is run listing at", config.ServerConfig.Port)
 	app.Run(fmt.Sprintf(":%d", config.ServerConfig.Port))
-
-
+	
 }
