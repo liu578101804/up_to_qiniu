@@ -36,7 +36,7 @@ func initJSON()  {
 	}
 }
 
-type dnConfig struct {
+type dbConfig struct {
 	Dialect      string
 	Database     string
 	User         string
@@ -49,7 +49,7 @@ type dnConfig struct {
 	MaxOpenConns int
 }
 //数据库配置
-var DBConfig dnConfig
+var DBConfig dbConfig
 
 func initDB()  {
 	utils.SetStructByJSON(&DBConfig, jsonData["database"].(map[string]interface{}))
