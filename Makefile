@@ -5,7 +5,7 @@ DOCKER_IMAGE_NAME=liu578101804/up_to_qiniu:1.0
 
 .PHONY: dev
 dev:
-	go run main.go
+	$(GOBUILD) -o ./build/app -v && ./build/app
 
 .PHONY: build_linux
 build_linux:
